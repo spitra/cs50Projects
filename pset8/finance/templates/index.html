@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    index
+{% endblock %}
+
+{% block main %}
+<table style = "width:100%">
+    <tr>
+        <th>Ticker</th>
+        <th>Price/Share</th>
+        <th>Shares</th>
+        <th>Value</th>
+    </tr>
+
+    {% for items in stocklist %}
+    <tr>
+        <th>{{items["ticker"]}}</th>
+        <th>${{items["price"]}}</th>
+        <th>{{items["shares"]}}</th>
+        <th>${{items["value"]}}</th>
+    </tr>
+    {%endfor%}
+</table>
+<p style="padding-top:10%">Cash : ${{cash}} Total Value : ${{totalvalue}}</p>
+{% endblock %}

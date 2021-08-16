@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    history
+{% endblock %}
+
+{% block main %}
+<table style = "width:100%">
+    <tr>
+        <th>Ticker</th>
+        <th>Shares</th>
+        <th>Time</th>
+        <th>Price</th>
+        <th>Type</th>
+    </tr>
+
+    {% for items in stocklist %}
+    <tr>
+        <th>{{items["ticker"]}}</th>
+        <th>{{items["shares"]}}</th>
+        <th>{{items["time"]}}</th>
+        <th>${{items["pricePerShare"]}}</th>
+        <th>{{items["type"]}}</th>
+    </tr>
+    {%endfor%}
+</table>
+
+{% endblock %}
